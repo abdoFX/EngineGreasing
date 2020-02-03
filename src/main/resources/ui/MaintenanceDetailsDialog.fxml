@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox fx:id="maintenanceDetailsRoot" spacing="10.0" stylesheets="@../css/maintenanceDetails.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MaintenanceDetailsDialogController">
+   <children>
+      <AnchorPane minHeight="150.0" style="-fx-background-color: #9E9E9E;">
+         <children>
+            <HBox>
+               <children>
+                  <JFXButton fx:id="btnReturn" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" onAction="#forwardEventHandling" text="return" HBox.hgrow="NEVER">
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi-keyboard-backspace" iconSize="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Label prefHeight="114.0" prefWidth="255.0" text="Maintenance Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="btnEdit" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#forwardEventHandling" text="Edit">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi-lead-pencil" iconSize="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDelete" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#forwardEventHandling" text="Delete">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi-delete-forever" iconSize="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnPrint" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" onAction="#forwardEventHandling" text="Print">
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi-printer" iconSize="20" />
+                     </graphic>
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="-10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow spread="0.3" />
+         </effect>
+      </AnchorPane>
+      <VBox maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <JFXComboBox fx:id="cbWorkingTimeDate" editable="true" maxHeight="1.7976931348623157E308" />
+            <JFXDatePicker fx:id="jfxdpFrom" maxHeight="1.7976931348623157E308" showWeekNumbers="true">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </JFXDatePicker>
+            <JFXDatePicker fx:id="jfxdpTo" defaultColor="#8f1c00" maxHeight="1.7976931348623157E308" showWeekNumbers="true">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </JFXDatePicker>
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </VBox>
+      <TableView fx:id="tvListMaintenanace" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tcId" text="Id">
+               <cellValueFactory>
+                  <PropertyValueFactory property="id" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tcEngineName" text="Engine Name">
+               <cellValueFactory>
+                  <PropertyValueFactory property="engine" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="tcDate" text="Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="maintDate" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

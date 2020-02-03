@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Engine" table="engine">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="type" type="java.lang.String">
+            <column name="type"/>
+        </property>
+        <property name="designation" type="java.lang.String">
+            <column name="designation"/>
+
+        </property>
+        <property name="lubrifiantConsumation" type="java.lang.String">
+            <column name="lubrifiantConsomation"/>
+
+        </property>
+        <property name="frequincy" type="java.lang.Integer">
+            <column name="frequincy"/>
+        </property>
+        <property name="startSetupDate" type="java.time.LocalDateTime">
+            <column name="startSetupDate"/>
+        </property>
+        <property name="workingTimeType" column="workingTimeType" not-null="true">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.WorkingTimeType</param>
+
+                <param name="type">12</param>
+            </type>
+
+        </property>
+
+
+        <many-to-one name="zone" class="model.Zone" cascade="save-update" fetch="select" lazy="false">
+            <column name="idZone"/>
+        </many-to-one>
+
+        <many-to-one name="lubrifiant" class="model.Lubrifiant" cascade="save-update" lazy="false">
+            <column name="idLubrifiant"/>
+        </many-to-one>
+
+        <set name="workingTimeEntries" table="workingHours"
+             inverse="true" cascade="all-delete-orphan" lazy="false" fetch="select">
+            <key>
+                <column name="idEngine" not-null="true"/>
+            </key>
+            <one-to-many class="model.WorkingTimeEntry"/>
+        </set>
+        <set name="maintenances" table="maintance"
+             lazy="false" cascade="all-delete-orphan">
+            <key>
+                <column name="idEngine" not-null="true"/>
+            </key>
+            <one-to-many class="model.maintenance"/>
+        </set>
+    </class>
+</hibernate-mapping>

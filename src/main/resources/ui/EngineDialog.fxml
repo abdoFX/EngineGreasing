@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<?import customControls.ComboBoxTablePopup?>
+<VBox fx:id="engineDialog" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EngineDialogController">
+    <children>
+        <HBox alignment="CENTER" minHeight="100.0" spacing="10.0" style="-fx-background-color: #ca320d;">
+            <children>
+                <JFXButton fx:id="btnReturn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#forwardEventHandling" text="Return " HBox.hgrow="ALWAYS">
+                    <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="mdi-keyboard-backspace" iconSize="30" textAlignment="CENTER" wrappingWidth="30.0" />
+                    </graphic>
+                </JFXButton>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Engine Dialog" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Separator visible="false" HBox.hgrow="ALWAYS" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="30.0" />
+            </VBox.margin>
+        </HBox>
+        <VBox spacing="10.0">
+            <children>
+                <JFXTextField fx:id="tfId" disable="true" editable="false" labelFloat="true">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </JFXTextField>
+                <JFXTextField fx:id="tfType" labelFloat="true" promptText="Tag Number">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </JFXTextField>
+                <JFXTextField fx:id="tfDesignation" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="Designation">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </JFXTextField>
+                <JFXTextField fx:id="tfConsume" labelFloat="true" promptText="Consumation">
+                    <padding>
+                        <Insets bottom="20.0" />
+                    </padding>
+                </JFXTextField>
+                <HBox spacing="20.0" />
+                <GridPane hgap="15.0" vgap="20.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="NEVER" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" text="Frequincy:">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Spinner fx:id="SPFrequincy" editable="true" maxWidth="1.7976931348623157E308" prefHeight="40.0" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory max="1000000" min="0" />
+                            </valueFactory>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </Spinner>
+                        <Label text="Lubrifiant:" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+
+                        <Label text="Installation:" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontIcon fx:id="btnAddLubrifiant" iconLiteral="mdi-plus-circle-outline" iconSize="30" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAddZone" contentDisplay="GRAPHIC_ONLY" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi-plus-circle-outline" iconSize="30" />
+                     </graphic>
+                  </JFXButton>
+
+                        <ComboBoxTablePopup fx:id="cbtpSearchZone" prefHeight="35" maxWidth="1.7976931348623157E308"
+                                            GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <ComboBoxTablePopup fx:id="cbtpSearchLubrifiant" prefHeight="35"
+                                            maxWidth="1.7976931348623157E308"
+                                            GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </GridPane>
+
+
+                <HBox>
+                    <children>
+                        <Separator prefWidth="200.0" visible="false" />
+                        <JFXRadioButton fx:id="rbHour" selected="true" text="HOUR" textFill="#542020">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold Italic" size="12.0" />
+                            </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rbPeriod" text="PERIOD" textFill="#542020">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold Italic" size="12.0" />
+                            </font>
+                        </JFXRadioButton>
+                        <Separator prefWidth="200.0" visible="false" />
+                    </children>
+                </HBox>
+
+
+                <HBox spacing="5.0">
+                    <children>
+                        <Separator visible="false" HBox.hgrow="ALWAYS" />
+                        <JFXButton fx:id="btnOk" alignment="CENTER" contentDisplay="CENTER" minWidth="60.0" mnemonicParsing="false" onAction="#forwardEventHandling" text="O.K">
+                            <font>
+                                <Font name="Arial Bold" size="16.0" />
+                            </font>
+                        </JFXButton>
+
+                        <Separator visible="false" HBox.hgrow="ALWAYS" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="120.0" right="120.0" />
+            </padding>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="20.0" />
+    </padding>
+</VBox>

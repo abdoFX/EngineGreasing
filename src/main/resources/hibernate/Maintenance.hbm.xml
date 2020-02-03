@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.maintenance" table="maintance">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="maintDate" type="java.time.LocalDateTime">
+            <column name="maintDate"/>
+        </property>
+
+
+        <many-to-one name="engine" class="model.Engine"  lazy="false">
+            <column name="idEngine" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

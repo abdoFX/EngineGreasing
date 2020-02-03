@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox style="-fx-background-color: #448aff;" stylesheets="@../../css/mWindow/sideMenu.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainWindow.RightMenuController">
+    <children>
+      <ImageView fitHeight="200.0" fitWidth="180.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../img/images.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ImageView>
+        <JFXButton fx:id="btnBase" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#forwardEventHandling" onKeyPressed="#forwardEventHandling" text="Station" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <FontIcon iconLiteral="mdi-football" iconSize="30" />
+         </graphic></JFXButton>
+        <JFXButton fx:id="btnZone" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#forwardEventHandling" onKeyPressed="#forwardEventHandling" text="Installation" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <FontIcon iconLiteral="mdi-image-area" iconSize="30" />
+         </graphic></JFXButton>
+        <JFXButton fx:id="btnLubrifiant" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#forwardEventHandling" onKeyPressed="#forwardEventHandling" text="Lubrifiant" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <FontIcon iconLiteral="mdi-bank" iconSize="30" />
+         </graphic></JFXButton>
+        <JFXButton fx:id="btnEngine" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#forwardEventHandling" onKeyPressed="#forwardEventHandling" text="Engine" VBox.vgrow="ALWAYS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <FontIcon iconLiteral="mdi-engine" iconSize="30" />
+         </graphic></JFXButton>
+      <JFXButton alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" text="Settings">
+         <graphic>
+            <FontIcon iconLiteral="mdi-settings" iconSize="30" />
+         </graphic>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" text="About">
+         <graphic>
+            <FontIcon iconLiteral="mdi-comment-question-outline" iconSize="30" />
+         </graphic>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+    </children>
+</VBox>

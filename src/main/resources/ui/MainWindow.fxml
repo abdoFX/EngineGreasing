@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.StatusBar?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXSnackbar?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import customControls.ComboBoxTablePopup?>
+<?import jfxtras.labs.scene.control.gauge.MatrixPanel?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections ?>
+<?import javafx.scene.shape.Circle?>
+<?import jfxtras.scene.layout.CircularPane?>
+<?import jfxtras.labs.scene.control.window.CloseIcon?>
+<AnchorPane fx:controller="controller.MainWindowController" prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="miCancel" mnemonicParsing="false" text="Close"
+                                          onAction="#forwardEventHandling"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Reports">
+                            <items>
+
+                                <Menu text="Engine">
+                                    <items>
+                                        <MenuItem fx:id="miListEngine" mnemonicParsing="false" text="List Engines"
+                                                  onAction="#forwardEventHandling"/>
+                                        <MenuItem fx:id="miHistoriqueOfMaintenance" mnemonicParsing="false"
+                                                  text="Historique of Maintenance" onAction="#forwardEventHandling"/>
+                                        <MenuItem fx:id="miHistoriqueOfWorkingTime" mnemonicParsing="false"
+                                                  text="Historique of Working" onAction="#forwardEventHandling"/>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+
+                    </menus>
+                </MenuBar>
+                <ToolBar>
+
+                    <items>
+                        <Button text="Base" onAction="#forwardEventHandling"/>
+                        <Button text="Zone" onAction="#forwardEventHandling"/>
+                        <Button text="Lubrifiant" onAction="#forwardEventHandling"/>
+                        <Button text="Engine" onAction="#forwardEventHandling"/>
+
+                    </items>
+
+                </ToolBar>
+                <JFXTabPane fx:id="tpMainArea" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                    <tabs>
+                        <Tab text="Home">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+
+
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+
+                    </tabs>
+                </JFXTabPane>
+                <StatusBar fx:id="sbState" prefHeight="50.0"/>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

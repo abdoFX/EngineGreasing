@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox fx:id="topArea" spacing="10.0" stylesheets="@../css/engine.css" xmlns="http://javafx.com/javafx/8.0.111"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EngineController">
+    <children>
+        <AnchorPane prefHeight="180.0" style="-fx-background-color: #455A64;">
+            <children>
+                <HBox spacing="20.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                    <children>
+                        <JFXButton fx:id="btnReturn" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308"
+                                   onAction="#forwardEventHandling" text="return">
+                            <graphic>
+                                <FontIcon iconColor="WHITE" iconLiteral="mdi-keyboard-backspace" iconSize="30"/>
+                            </graphic>
+                        </JFXButton>
+                        <Label prefHeight="70.0" prefWidth="201.0" text="Engine" textFill="#f5f5f5">
+                            <font>
+                                <Font name="System Bold" size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <Separator visible="false" HBox.hgrow="ALWAYS"/>
+                        <JFXButton fx:id="btnAdd" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" mnemonicParsing="false" onAction="#forwardEventHandling"
+                                   prefHeight="30.0" text="Add" textOverrun="CLIP">
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-plus-circle" iconSize="20"
+                                          textAlignment="CENTER"/>
+                            </graphic>
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnEdit" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" mnemonicParsing="false" onAction="#forwardEventHandling"
+                                   prefHeight="30.0" text="Edit" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-border-color" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDelete" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" mnemonicParsing="false" onAction="#forwardEventHandling"
+                                   prefHeight="30.0" text="Delete" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-delete-forever" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAddWorkingTime" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" onAction="#forwardEventHandling" prefHeight="30.0"
+                                   text="Working Time" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-alarm-plus" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAddMaintenance" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" onAction="#forwardEventHandling" prefHeight="30.0"
+                                   text="Maintenance" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-settings" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnShowEngineWorkingTimeDetails" alignment="BOTTOM_LEFT"
+                                   contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" onAction="#forwardEventHandling"
+                                   prefHeight="30.0" text="Working History" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-history" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnRefresh" alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY"
+                                   graphicTextGap="10.0" onAction="#forwardEventHandling" prefHeight="30.0"
+                                   text="Refresh" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-refresh" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnShowEngineMaintenanceHistory" alignment="BOTTOM_LEFT"
+                                   contentDisplay="GRAPHIC_ONLY" graphicTextGap="10.0" onAction="#forwardEventHandling"
+                                   prefHeight="30.0" text="Maintenance History" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold" size="12.0"/>
+                            </font>
+                            <graphic>
+                                <FontIcon fill="WHITE" iconLiteral="mdi-history" iconSize="20"/>
+                            </graphic>
+                        </JFXButton>
+                        <Separator visible="false" HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets bottom="20.0"/>
+            </VBox.margin>
+            <padding>
+                <Insets bottom="-10.0"/>
+            </padding>
+            <effect>
+                <DropShadow height="15.07" radius="6.2925" spread="0.18" width="12.1"/>
+            </effect>
+        </AnchorPane>
+        <TableView fx:id="tvListEngine" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="tcId" minWidth="-1.0" text="Id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcType" minWidth="-1.0" text="Tag Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcDesignation" minWidth="-1.0" text="Designation">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="designation"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcConsummation" minWidth="-1.0" text="Consommation">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lubrifiantConsumation"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcFrequincy" minWidth="-1.0" text="Frequincy">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="frequincy"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcWorkingTime" minWidth="-1.0" text="WorkingTime">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="workingTime"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcLastMaintenanceDate" minWidth="-1.0" text="Last Maintenance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastMaintenanceDate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcLibrifiant" minWidth="-1.0" text="Lubrifiant">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lubrifiant"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tcZone" minWidth="-1.0" text="Installation">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="zone"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

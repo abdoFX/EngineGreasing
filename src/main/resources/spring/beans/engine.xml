@@ -1,0 +1,90 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+    <!-- ******************* MVVM Patteren ************************** -->
+    <bean id="splashScreenController" class="controller.SplashScreenController"/>
+
+
+    <bean id="mainWindowController" class="controller.MainWindowController"/>
+    <bean id="mainWindowViewModel" class="viewModel.MainWindowViewModel"/>
+
+
+    <!-- 3 -->
+    <bean id="baseViewModel" class="viewModel.BaseViewModel"/>
+    <bean id="baseController" class="controller.BaseController"/>
+
+    <!-- 4 -->
+    <bean id="zoneViewModel" class="viewModel.ZoneViewModel"/>
+    <bean id="zoneController" class="controller.ZoneController"/>
+
+    <!-- 2 -->
+    <bean id="engineDialogController" class="controller.EngineDialogController"/>
+    <bean id="engineDialogViewModel" class="viewModel.EngineDialogViewModel"/>
+
+
+    <!-- 5 -->
+    <bean id="engineController" class="controller.EngineController" scope="prototype"/>
+    <bean id="engineViewModel" class="viewModel.EngineViewModel" scope="prototype"/>
+
+    <!-- 6 -->
+    <bean id="lubrifiantController" class="controller.LubrifiantController"/>
+    <bean id="lubrifiantViewModel" class="viewModel.LubrifiantViewModel"/>
+
+    <!-- 7 -->
+    <bean id="workingTimeEntryController" class="controller.WorkingTimeEntryController"/>
+    <bean id="workingTimeEntryViewModel" class="viewModel.WorkingTimeEntryViewModel"/>
+
+    <!-- 8 -->
+    <bean id="maintenanceController" class="controller.MaintenanceController"/>
+    <bean id="maintenanceViewModel" class="viewModel.MaintenanceViewModel"/>
+
+    <!-- 9 -->
+    <bean id="workingTimeDetailsController" class="controller.WorkingTimeDetailsController"/>
+    <bean id="workingTimeDetailsViewModel" class="viewModel.WorkingTimeDetailsViewModel"/>
+
+    <!-- 10 -->
+    <bean id="maintenanceDetailsDialogController" class="controller.MaintenanceDetailsDialogController"/>
+    <bean id="maintenanceDetailsDialogViewModel" class="viewModel.MaintenanceDetailsDialogViewModel"/>
+
+
+    <!-- 11 -->
+    <bean id="mController" class="controller.mainWindow.mController"/>
+    <bean id="mWindowViewModel" class="viewModel.mainWindow.mWindowViewModel"/>
+    <!-- 12 -->
+    <bean id="rightMenuController" class="controller.mainWindow.RightMenuController"/>
+    <bean id="rightMenuViewModel" class="viewModel.mainWindow.RightMenuViewModel"/>
+
+    <!-- ******************* Bussiness Layer ************************** -->
+    <bean id="baseBo" class="bo.boimpl.BaseBOImpl"/>
+    <bean id="zoneBo" class="bo.boimpl.ZoneBOImpl"/>
+    <bean id="lubrifiantBo" class="bo.boimpl.LubrifiantBOImpl"/>
+    <bean id="engineBo" class="bo.boimpl.EngineBOImpl"/>
+    <bean id="workingTimeEntryBo" class="bo.boimpl.WorkingTimeEntryBOImpl"/>
+    <bean id="maintenanceBO" class="bo.boimpl.MaintenanceBOImpl"/>
+
+
+    <!-- ******************* Data Access Layer ************************** -->
+    <bean id="baseDAO" class="dao.daoimpl.BaseDAOImpl"/>
+    <bean id="zoneDAO" class="dao.daoimpl.ZoneDAOImpl"/>
+    <bean id="lubrifiantDAO" class="dao.daoimpl.LubrifiantDAOImpl"/>
+    <bean id="engineDAO" class="dao.daoimpl.EngineDaoImpl"/>
+    <bean id="workingTimeEntryDAO" class="dao.daoimpl.WorkingTimeEntryDAOImpl"/>
+    <bean id="maintenanceDAO" class="dao.daoimpl.MaintenanceDAOImpl"/>
+
+    <!-- ************************** GUI *******************************-->
+    <!-- Screens -->
+    <bean id="screensConfiguraiton" class="view.ScreensConfiguration"/>
+
+
+    <!-- event system -->
+    <bean id="guvaEventBus" class="com.google.common.eventbus.EventBus"/>
+
+
+    <!-- printing & reports -->
+
+
+</beans>
