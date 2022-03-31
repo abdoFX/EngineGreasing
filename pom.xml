@@ -62,7 +62,7 @@
         </plugins>
     </build>
     <properties>
-        <springframework.version>4.3.4.RELEASE</springframework.version>
+        <springframework.version>5.3.18</springframework.version>
 
         <hibernate.version>5.2.4.Final</hibernate.version>
 
